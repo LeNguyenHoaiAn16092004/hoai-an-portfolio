@@ -5,7 +5,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
    return (
       <>
          <Navigation />
-         <main>{children}</main>
+         <main id="main-content" role="main">{children}</main>
          <Footer />
       </>
    );
