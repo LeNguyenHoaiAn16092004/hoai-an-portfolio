@@ -1,29 +1,39 @@
 import { useRef, useEffect, useState } from 'react';
 
-export function useScrollReveal(options?: { threshold?: number; rootMargin?: string }) {
-   const ref = useRef<HTMLDivElement>(null);
-   const [isVisible, setIsVisible] = useState(false);
+interface ScrollRevealOptions {
+  threshold?: number;
+  rootMargin?: string;
+}
 
-   useEffect(() => {
-      const element = ref.current;
-      if (!element) return;
+export function useScrollReveal(options: ScrollRevealOptions = {}) {
+  const { threshold = 0.1, rootMargin = '0px' } = options;
+  // No observer support (very old browsers / SSR): show content immediately.
+  const [isVisible, setIsVisible] = useState(
+    () => typeof IntersectionObserver === 'undefined',
+  );
+  const ref = useRef<HTMLDivElement>(null);
 
-      const observer = new IntersectionObserver(
-         ([entry]) => {
-            if (entry.isIntersecting) {
-               setIsVisible(true);
-            }
-         },
-         { threshold: options?.threshold ?? 0.1, rootMargin: options?.rootMargin ?? '0px' }
-      );
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+    if (typeof IntersectionObserver === 'undefined') return;
 
-      observer.observe(element);
-      return () => observer.disconnect();
-   }, []);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold, rootMargin },
+    );
 
-   return { ref, isVisible };
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [threshold, rootMargin]);
+
+  return { ref, isVisible };
 }
 
 export function useStaggerDelay(index: number, baseDelay = 100) {
-   return index * baseDelay;
+  return index * baseDelay;
 }

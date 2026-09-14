@@ -20,6 +20,7 @@ const { isOpen, query, setQuery, filteredCommands, closePalette } = useCommandPa
          }}
          onClick={closePalette}
          role="dialog"
+         aria-modal="true"
          aria-label="Command palette"
       >
          <div
@@ -40,6 +41,10 @@ const { isOpen, query, setQuery, filteredCommands, closePalette } = useCommandPa
                value={query}
                onChange={(e) => setQuery(e.target.value)}
                autoFocus
+               role="combobox"
+               aria-expanded="true"
+               aria-controls="command-list"
+               aria-label="Search commands"
                style={{
                   width: '100%',
                   padding: 'var(--space-3)',
@@ -53,10 +58,12 @@ const { isOpen, query, setQuery, filteredCommands, closePalette } = useCommandPa
                   boxSizing: 'border-box',
                }}
             />
-            <div style={{ marginTop: 'var(--space-4)' }}>
+            <div id="command-list" role="listbox" aria-label="Commands" style={{ marginTop: 'var(--space-4)' }}>
                {filteredCommands.map((cmd, i) => (
                   <button
                      key={i}
+                     role="option"
+                     aria-selected="false"
                      onClick={() => { cmd.action(); closePalette(); }}
                      style={{
                         display: 'flex',

@@ -91,6 +91,7 @@ export function Navigation() {
                      key={path}
                      to={path}
                      onClick={() => setMenuOpen(false)}
+                     aria-current={isActive(path) ? 'page' : undefined}
                      style={{
                         padding: 'var(--space-3) var(--space-3)',
                         minHeight: '44px',
@@ -150,6 +151,7 @@ export function Navigation() {
                      key={path}
                      to={path}
                      onClick={() => setMenuOpen(false)}
+                     aria-current={isActive(path) ? 'page' : undefined}
                      style={{
                         display: 'block',
                         padding: 'var(--space-3)',

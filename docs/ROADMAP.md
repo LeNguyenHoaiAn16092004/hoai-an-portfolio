@@ -55,8 +55,8 @@
 ## Phase 4 — Projects
 
 - [x] Project archive
-- [ ] Filters
-- [ ] Project detail
+- [x] Filters
+- [x] Project detail
 - [x] Case-study layout
 - [ ] Architecture visualization
 - [ ] Related projects
@@ -77,9 +77,9 @@
 ## Phase 7 — Notes
 
 - [x] Notes archive
-- [ ] Search
-- [ ] Tags/categories
-- [ ] Article detail
+- [x] Search
+- [x] Tags/categories
+- [x] Article detail
 
 ## Phase 8 — Motion
 
