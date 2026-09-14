@@ -4,7 +4,7 @@
 
 - [ ] Create repository
 - [ ] Initialize React + TypeScript + Vite
-- [ ] Configure Git
+- [x] Configure Git
 - [ ] Configure linting
 - [ ] Configure formatting
 - [ ] Establish source structure
