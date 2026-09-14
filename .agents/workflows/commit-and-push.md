@@ -4,49 +4,99 @@ Use this workflow after completing a coherent feature or milestone when Git oper
 
 ## Procedure
 
-1. Inspect repository state:
-   - `git status`
-   - current branch
-   - recent commit history
+```
+Inspect
+  ↓
+Create/switch feature branch
+  ↓
+Implement
+  ↓
+Validate
+  ↓
+Review diff
+  ↓
+Security check
+  ↓
+Stage relevant files
+  ↓
+Commit
+  ↓
+Verify
+  ↓
+Push feature branch
+  ↓
+Report
+```
 
-2. Validate the work:
-   - lint
-   - type-check
-   - build
-   - tests if available
-   - browser/UI QA for UI changes
+### Step 1 — Inspect
+- Run `git status`.
+- Check current branch.
+- Review recent commit history.
+- Confirm the task explicitly authorizes autonomous Git workflow.
+- If the current branch is `main`, switch to `feature/<short-name>`.
 
-3. Review changes:
-   - inspect `git diff`
-   - inspect staged diff after staging
-   - confirm only current-task files are included
+### Step 2 — Create/switch feature branch
+- Determine the branch type: feature, fix, perf, or docs.
+- Create or switch to the appropriate branch: `feature/<short-name>`, `fix/<short-name>`, `perf/<short-name>`, or `docs/<short-name>`.
+- Verify the branch is NOT `main`.
 
-4. Security check:
-   - no `.env` secrets
-   - no API keys/tokens/passwords
-   - no private credentials
-   - no `node_modules`
-   - no build artifacts or irrelevant generated files
+### Step 3 — Implement
+- Implement the feature according to the task requirements.
+- Follow the project architecture and design rules.
+- Do not modify `.agents/`, `docs/`, or the remote URL unless explicitly requested.
 
-5. Stage only relevant files.
+### Step 4 — Validate
+Run all relevant validation commands:
+- `npm run lint`
+- `npm run type-check`
+- `npm run build`
+- Tests if available.
+- Browser/UI QA for UI changes.
 
-6. Commit using a Conventional Commit message.
+If any validation fails, DO NOT commit. Fix the issue or stop and report it.
 
-7. Verify:
-   - `git status`
-   - `git log -1`
-   - current branch
+### Step 5 — Review diff
+- Inspect `git diff`.
+- Inspect staged diff after staging (`git diff --cached`).
+- Confirm only current-task files are included.
+- Do not blindly run `git add .`.
 
-8. Push:
-   - push only when the project Git policy and current task explicitly authorize it
-   - normally push the feature/fix branch, not `main`
+### Step 6 — Security check
+Verify no secrets or sensitive files are staged or tracked:
+- No `.env` or `.env.*` files containing secrets.
+- No API keys, access tokens, or passwords.
+- No private credentials or certificates.
+- No `node_modules/` or `dist/`.
+- No build artifacts or irrelevant generated files.
 
-9. Final report:
-   - branch
-   - commit hash/message
-   - validation results
-   - push result
-   - remaining issues, if any
+### Step 7 — Stage relevant files
+Stage only files related to the current task.
+
+### Step 8 — Commit
+Commit using a Conventional Commit message.
+Prefer one coherent commit per completed feature or milestone.
+Do not create noisy commits for every tiny edit.
+
+### Step 9 — Verify
+- Run `git status`.
+- Run `git log -1`.
+- Verify the current branch is NOT `main`.
+- Verify the working tree is clean.
+- Verify commit history remains intact.
+
+### Step 10 — Push feature branch
+- Verify branch is NOT `main`.
+- Verify remote is `origin`.
+- Use normal `git push origin <branch>` (never force push).
+- If the task explicitly authorizes pushing `main`, push `main` only when the user explicitly requests it.
+
+### Step 11 — Report
+Report:
+- Branch
+- Commit hash/message
+- Validation results
+- Push result
+- Remaining issues, if any
 
 ## Never
 - Do not blindly run `git add .`.
@@ -54,3 +104,5 @@ Use this workflow after completing a coherent feature or milestone when Git oper
 - Do not reset/clean/discard work to make the tree clean.
 - Do not create or modify GitHub authentication credentials inside the project.
 - Do not hide validation failures just to create a commit.
+- Do not push directly to `main` during autonomous workflow.
+- Do not ask for confirmation for every normal Git operation when the task explicitly authorizes autonomous Git workflow.
