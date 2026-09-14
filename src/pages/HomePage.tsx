@@ -7,27 +7,41 @@ export function HomePage() {
                paddingInline: 'var(--page-gutter)',
             }}
          >
-            <p className="section-number" style={{ marginBottom: 'var(--space-4)' }}>
+            <p
+               className="section-number"
+               style={{
+                  marginBottom: 'var(--space-4)',
+                  letterSpacing: 'var(--tracking-widest)',
+               }}
+            >
                01 — Identity
             </p>
-            <h1 className="section-title" style={{ marginBottom: 'var(--space-6)' }}>
+            <h1
+               className="section-title"
+               style={{
+                  marginBottom: 'var(--space-6)',
+                  lineHeight: 'var(--leading-tight)',
+               }}
+            >
                Hoài An
             </h1>
             <p
                style={{
-                  fontSize: 'var(--text-xl)',
+                  fontSize: 'var(--text-2xl)',
                   color: 'var(--color-text-secondary)',
                   marginBottom: 'var(--space-8)',
                   fontFamily: 'var(--font-editorial)',
+                  fontWeight: 'var(--weight-regular)',
                }}
             >
                Backend / Software Developer — Vietnam
             </p>
-            <div className="flex gap-4" style={{ marginBottom: 'var(--space-16)' }}>
+            <div className="flex gap-2" style={{ marginBottom: 'var(--space-16)' }}>
                <span className="badge badge--accent">Backend</span>
                <span className="badge">TypeScript</span>
                <span className="badge">React</span>
                <span className="badge">.NET</span>
+               <span className="badge">Systems</span>
             </div>
             <p
                className="font-editorial"
@@ -35,6 +49,7 @@ export function HomePage() {
                   fontSize: 'var(--text-lg)',
                   color: 'var(--color-text-tertiary)',
                   maxWidth: 'var(--max-width-text)',
+                  lineHeight: 'var(--leading-relaxed)',
                }}
             >
                I build things that work.
@@ -53,23 +68,28 @@ export function HomePage() {
             </p>
             <h2
                style={{
-                  fontSize: 'var(--text-3xl)',
+                  fontSize: 'var(--text-4xl)',
                   marginBottom: 'var(--space-8)',
                   fontFamily: 'var(--font-display)',
                   fontWeight: 'var(--weight-black)',
+                  lineHeight: 'var(--leading-tight)',
                }}
             >
                Projects
             </h2>
-            <div
+            <p
+               className="text-secondary"
                style={{
-                  fontFamily: 'var(--font-technical)',
-                  fontSize: 'var(--text-sm)',
-                  color: 'var(--color-text-tertiary)',
+                  fontFamily: 'var(--font-editorial)',
+                  fontSize: 'var(--text-lg)',
+                  marginBottom: 'var(--space-8)',
                }}
             >
-               <p>View all projects →</p>
-            </div>
+               Selected work and engineering artifacts.
+            </p>
+            <a href="/projects" className="btn btn--lg">
+               View all projects
+            </a>
          </section>
 
          <section
@@ -128,19 +148,16 @@ export function HomePage() {
             </p>
             <h2
                style={{
-                  fontSize: 'var(--text-3xl)',
+                  fontSize: 'var(--text-4xl)',
                   marginBottom: 'var(--space-4)',
                   fontFamily: 'var(--font-display)',
                   fontWeight: 'var(--weight-black)',
+                  lineHeight: 'var(--leading-tight)',
                }}
             >
                Get in touch
             </h2>
-            <a
-               href="/contact"
-               className="btn btn--lg"
-               style={{ marginTop: 'var(--space-4)' }}
-            >
+            <a href="/contact" className="btn btn--lg" style={{ marginTop: 'var(--space-4)' }}>
                Contact
             </a>
          </section>

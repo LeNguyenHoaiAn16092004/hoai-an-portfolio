@@ -378,3 +378,144 @@ select:focus {
 .mt-24 { margin-top: var(--space-24); }
 .mb-4 { margin-bottom: var(--space-4); }
 .mb-8 { margin-bottom: var(--space-8); }
+
+/* ─── Responsive: Tablet (768–1279px) ─────────────────── */
+
+@media (max-width: 1279px) {
+   .section-title {
+      font-size: var(--text-3xl);
+   }
+}
+
+/* ─── Responsive: Mobile (320–767px) ──────────────────── */
+
+@media (max-width: 767px) {
+   .section-title {
+      font-size: var(--text-2xl);
+   }
+
+   .btn {
+      width: 100%;
+      justify-content: center;
+   }
+
+   .container {
+      padding-inline: var(--space-4);
+   }
+}
+
+/* ─── Responsive: Narrow mobile (320–390px) ──────────── */
+
+@media (max-width: 390px) {
+   .section-title {
+      font-size: var(--text-xl);
+   }
+
+   .badge {
+      font-size: var(--text-xs);
+      padding: var(--space-1) var(--space-2);
+   }
+}
+
+/* ─── Touch-specific styles ──────────────────────────── */
+
+@media (hover: none) and (pointer: coarse) {
+   .btn:hover {
+      background-color: var(--color-bg-surface);
+      color: var(--color-text-primary);
+   }
+
+   .btn--accent:hover {
+      background-color: var(--color-accent);
+   }
+
+   a:hover {
+      color: inherit;
+   }
+
+   .btn {
+      min-height: 44px;
+   }
+}
+
+/* ─── Orientation: Landscape ─────────────────────────── */
+
+@media (orientation: landscape) and (max-height: 500px) {
+   section {
+      paddingBlock: var(--space-8) !important;
+   }
+}
+
+/* ─── Orientation: Portrait ──────────────────────────── */
+
+@media (orientation: portrait) {
+   .container--wide {
+      max-width: var(--max-width-content);
+   }
+}
+
+/* ─── Foldable: narrow/cover mode ────────────────────── */
+
+@media (max-width: 480px) and (orientation: portrait) {
+   .flex {
+      flex-direction: column;
+   }
+}
+
+/* ─── Foldable: unfolded/wide mode ───────────────────── */
+
+@media (min-width: 1280px) and (max-width: 1024px) {
+   .container {
+      max-width: 90%;
+   }
+}
+
+/* ─── Overflow prevention ────────────────────────────── */
+
+html, body {
+   overflow-x: hidden;
+}
+
+*, *::before, *::after {
+   max-width: 100%;
+}
+
+img, picture, video, svg {
+   max-width: 100%;
+   height: auto;
+}
+
+/* ─── Navigation responsive ────────────────────────── */
+
+@media (max-width: 767px) {
+   .nav-menu-toggle {
+      display: inline-flex !important;
+   }
+
+   nav .container > div.nav-links {
+      display: none;
+   }
+
+   nav .container > div.nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      backgroundColor: var(--color-bg);
+      borderBottom: var(--border-width-thin) solid var(--color-border-subtle);
+      padding: var(--space-3);
+      z-index: var(--z-overlay);
+   }
+}
+
+@media (min-width: 768px) {
+   .nav-menu-toggle {
+      display: none !important;
+   }
+
+   .nav-mobile-overlay {
+      display: none !important;
+   }
+}
