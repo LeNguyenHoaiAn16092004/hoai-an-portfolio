@@ -48,8 +48,7 @@ export function ProjectsPage() {
   }, [activeCategory, activeTechnology, query]);
 
   if (slug) {
-    const project = getProjectBySlug(slug);
-    if (!project) {
+    const project = getProjectBySlug(slug);    if (!project) {
       return (
         <div>
           <section style={{ paddingBlock: 'var(--section-gap)', paddingInline: 'var(--page-gutter)' }}>
@@ -68,7 +67,9 @@ export function ProjectsPage() {
     return (
       <div>
         <section style={{ paddingBlock: 'var(--section-gap)', paddingInline: 'var(--page-gutter)' }}>
-          <p className="section-number">{String(project.year)}</p>
+          <p className="section-number">
+            {project.year !== undefined ? String(project.year) : project.category}
+          </p>
           <h1 className="section-title" style={{ marginTop: 'var(--space-2)' }}>
             {project.title}
           </h1>
@@ -199,6 +200,46 @@ export function ProjectsPage() {
           >
             ← Back to projects
           </Link>
+          {projects.length > 1 && (
+            <div
+              style={{
+                marginTop: 'var(--space-8)',
+                paddingTop: 'var(--space-8)',
+                borderTop: 'var(--border-width-thin) solid var(--color-border-subtle)',
+              }}
+            >
+              <p
+                className="text-tertiary"
+                style={{
+                  fontFamily: 'var(--font-technical)',
+                  fontSize: 'var(--text-xs)',
+                  letterSpacing: 'var(--tracking-wider)',
+                  textTransform: 'uppercase',
+                  marginBottom: 'var(--space-2)',
+                }}
+              >
+                Next project
+              </p>
+              {(() => {
+                const index = projects.findIndex((p) => p.slug === slug);
+                const next = projects[(index + 1) % projects.length];
+                return (
+                  <Link
+                    to={`/projects/${next.slug}`}
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontWeight: 'var(--weight-bold)',
+                      fontSize: 'var(--text-xl)',
+                      color: 'var(--color-text-primary)',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    {next.title} →
+                  </Link>
+                );
+              })()}
+            </div>
+          )}
         </section>
       </div>
     );
@@ -368,15 +409,17 @@ export function ProjectsPage() {
                   className="flex items-center gap-4"
                   style={{ marginBottom: 'var(--space-2)', flexWrap: 'wrap' }}
                 >
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-technical)',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--color-accent)',
-                    }}
-                  >
-                    {String(project.year)}
-                  </span>
+                  {project.year !== undefined && (
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-technical)',
+                        fontSize: 'var(--text-sm)',
+                        color: 'var(--color-accent)',
+                      }}
+                    >
+                      {String(project.year)}
+                    </span>
+                  )}
                   <span className="badge">{project.category}</span>
                   {project.featured && <span className="badge badge--accent">Featured</span>}
                 </div>

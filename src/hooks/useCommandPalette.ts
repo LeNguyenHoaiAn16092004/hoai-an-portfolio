@@ -35,12 +35,6 @@ export function useCommandPalette() {
           window.open('https://github.com/LeNguyenHoaiAn16092004', '_blank', 'noopener');
         },
       },
-      {
-        label: 'Open LinkedIn',
-        action: () => {
-          window.open('https://linkedin.com', '_blank', 'noopener');
-        },
-      },
     ],
     [navigate, toggleTheme],
   );

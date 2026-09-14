@@ -59,14 +59,14 @@
 - [x] Project detail
 - [x] Case-study layout
 - [ ] Architecture visualization
-- [ ] Related projects
+- [x] Related projects
 
 ## Phase 5 — About
 
 - [x] Profile
 - [ ] Education
-- [ ] Skills
-- [ ] Interests
+- [x] Skills
+- [x] Interests
 
 ## Phase 6 — Lab
 

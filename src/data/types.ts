@@ -20,7 +20,8 @@ export type ProjectCategory =
 export interface Project {
   slug: string;
   title: string;
-  year: number;
+  /** Year is optional — omit when not verified rather than inventing one. */
+  year?: number;
   category: ProjectCategory;
   shortDescription: string;
   description: string;
