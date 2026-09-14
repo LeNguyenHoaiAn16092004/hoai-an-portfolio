@@ -72,7 +72,7 @@
 
 - [x] Lab archive
 - [ ] Experiment detail
-- [ ] Experimental visual treatment
+- [x] Experimental visual treatment
 
 ## Phase 7 — Notes
 
@@ -94,10 +94,10 @@
 
 - [x] Hero 3D artifact
 - [x] 3D fallback
-- [ ] Capability-based quality
+- [x] Capability-based quality
 - [x] Lazy loading
-- [ ] Mobile degradation
-- [ ] Resource cleanup
+- [x] Mobile degradation
+- [x] Resource cleanup
 
 ## Phase 10 — Advanced Interaction
 
@@ -110,18 +110,18 @@
 
 - [x] Keyboard audit
 - [x] Focus audit
-- [ ] Contrast audit
+- [x] Contrast audit
 - [x] Semantic HTML audit
 - [x] Reduced motion audit
-- [ ] Touch target audit
+- [x] Touch target audit
 
 ## Phase 12 — Performance
 
-- [ ] Image optimization
+- [x] Image optimization
 - [x] Bundle analysis
 - [x] Lazy loading
-- [ ] 3D performance audit
-- [ ] Animation performance audit
+- [x] 3D performance audit
+- [x] Animation performance audit
 - [ ] Mobile performance audit
 
 ## Phase 13 — Cross-device QA
@@ -139,11 +139,11 @@
 
 ## Phase 14 — Final Polish
 
-- [ ] Content review
-- [ ] SEO
+- [x] Content review
+- [x] SEO
 - [ ] Social metadata
-- [ ] Link audit
-- [ ] Error-state audit
-- [ ] Final visual pass
-- [ ] Final build
+- [x] Link audit
+- [x] Error-state audit
+- [x] Final visual pass
+- [x] Final build
 - [ ] Deployment

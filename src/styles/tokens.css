@@ -137,13 +137,15 @@
   /* Text */
   --color-text-primary:   #1a1714;  /* near-black, warm */
   --color-text-secondary: #6b6560;  /* warm gray */
-  --color-text-tertiary:  #9c9690;  /* faint metadata */
+  --color-text-tertiary:  #6e6963;  /* faint metadata — 4.87:1 on bg (AA) */
   --color-text-inverted:  #f5f2ee;
 
   /* Accent — muted terracotta/red per DESIGN.md */
   --color-accent:        #b84c3c;
   --color-accent-muted:  #d47060;
   --color-accent-subtle: #f0dcd8;
+  /* Darker accent for small text on the subtle background (4.53:1, AA) */
+  --color-accent-strong: #a84334;
 
   /* Borders */
   --color-border:        #2a2520;  /* dark, editorial */
@@ -168,13 +170,15 @@
   /* Text */
   --color-text-primary:   #e8e3da;  /* warm off-white */
   --color-text-secondary: #9a9089;  /* muted warm gray */
-  --color-text-tertiary:  #6a6058;
+  --color-text-tertiary:  #8f857c;  /* faint metadata — 4.81:1 on bg (AA) */
   --color-text-inverted:  #1c1a17;
 
   /* Accent */
   --color-accent:        #d46050;
   --color-accent-muted:  #b84c3c;
   --color-accent-subtle: #3d2520;
+  /* Lighter accent for small text on the subtle background (4.88:1, AA) */
+  --color-accent-strong: #e67864;
 
   /* Borders */
   --color-border:        #d4cfc6;  /* warm light neutral */

@@ -39,6 +39,8 @@ export function Footer() {
             {links.github && (
               <a
                 href={links.github}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   color: 'var(--color-text-secondary)',
                   textDecoration: 'none',

@@ -5,10 +5,12 @@ import { Reveal } from '../components/Reveal';
 function ContactRow({
   label,
   href,
+  external,
   children,
 }: {
   label: string;
   href?: string;
+  external?: boolean;
   children: ReactNode;
 }) {
   return (
@@ -26,7 +28,12 @@ function ContactRow({
         {label}
       </p>
       {href ? (
-        <a href={href} style={{ color: 'var(--color-text-primary)' }}>
+        <a
+          href={href}
+          target={external ? '_blank' : undefined}
+          rel={external ? 'noopener noreferrer' : undefined}
+          style={{ color: 'var(--color-text-primary)' }}
+        >
           {children}
         </a>
       ) : (
@@ -77,8 +84,8 @@ export function ContactPage() {
         <Reveal stagger={3}>
           <div style={{ maxWidth: 'var(--max-width-text)' }}>
             {links.github && (
-              <ContactRow label="GitHub" href={links.github}>
-                {links.github.replace('https://', '')}
+              <ContactRow label="GitHub" href={links.github} external>
+                <span>{links.github.replace('https://', '')}</span>
               </ContactRow>
             )}
             <ContactRow label="Email">{links.email ?? 'To be published'}</ContactRow>

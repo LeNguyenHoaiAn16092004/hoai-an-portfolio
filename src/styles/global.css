@@ -261,7 +261,7 @@ hr {
 
 .badge--accent {
    border-color: var(--color-accent);
-   color: var(--color-accent);
+   color: var(--color-accent-strong);
    background-color: var(--color-accent-subtle);
 }
 
@@ -329,6 +329,7 @@ input,
 textarea,
 select {
    width: 100%;
+   min-height: 44px;
    padding: var(--space-3) var(--space-4);
    font-family: var(--font-technical);
    font-size: var(--text-base);

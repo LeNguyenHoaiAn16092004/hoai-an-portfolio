@@ -19,10 +19,32 @@ export function LabPage() {
             style={{
               fontSize: 'var(--text-lg)',
               color: 'var(--color-text-secondary)',
-              marginBottom: 'var(--space-16)',
+              marginBottom: 'var(--space-8)',
             }}
           >
             Experiments and unfinished ideas.
+          </p>
+          <div
+            aria-hidden="true"
+            style={{
+              height: '8px',
+              marginBottom: 'var(--space-8)',
+              background:
+                'repeating-linear-gradient(-45deg, var(--color-accent) 0 12px, transparent 12px 24px)',
+              opacity: 0.55,
+            }}
+          />
+          <p
+            className="text-tertiary"
+            style={{
+              fontFamily: 'var(--font-technical)',
+              fontSize: 'var(--text-xs)',
+              letterSpacing: 'var(--tracking-wider)',
+              textTransform: 'uppercase',
+              marginBottom: 'var(--space-16)',
+            }}
+          >
+            Bench status: {experiments.length === 0 ? 'empty — awaiting first experiment' : 'open'}
           </p>
         </Reveal>
         {experiments.length === 0 ? (
