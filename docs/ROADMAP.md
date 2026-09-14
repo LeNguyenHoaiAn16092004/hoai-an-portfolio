@@ -54,72 +54,72 @@
 
 ## Phase 4 — Projects
 
-- [ ] Project archive
+- [x] Project archive
 - [ ] Filters
 - [ ] Project detail
-- [ ] Case-study layout
+- [x] Case-study layout
 - [ ] Architecture visualization
 - [ ] Related projects
 
 ## Phase 5 — About
 
-- [ ] Profile
+- [x] Profile
 - [ ] Education
 - [ ] Skills
 - [ ] Interests
 
 ## Phase 6 — Lab
 
-- [ ] Lab archive
+- [x] Lab archive
 - [ ] Experiment detail
 - [ ] Experimental visual treatment
 
 ## Phase 7 — Notes
 
-- [ ] Notes archive
+- [x] Notes archive
 - [ ] Search
 - [ ] Tags/categories
 - [ ] Article detail
 
 ## Phase 8 — Motion
 
-- [ ] Motion primitives
-- [ ] Page transitions
-- [ ] Scroll reveals
+- [x] Motion primitives
+- [x] Page transitions
+- [x] Scroll reveals
 - [ ] Typography motion
 - [ ] Project interactions
-- [ ] Reduced-motion mode
+- [x] Reduced-motion mode
 
 ## Phase 9 — 3D
 
-- [ ] Hero 3D artifact
-- [ ] 3D fallback
+- [x] Hero 3D artifact
+- [x] 3D fallback
 - [ ] Capability-based quality
-- [ ] Lazy loading
+- [x] Lazy loading
 - [ ] Mobile degradation
 - [ ] Resource cleanup
 
 ## Phase 10 — Advanced Interaction
 
 - [ ] Custom cursor
-- [ ] Command palette
-- [ ] Keyboard shortcuts
+- [x] Command palette
+- [x] Keyboard shortcuts
 - [ ] Optional experimental mode
 
 ## Phase 11 — Accessibility
 
-- [ ] Keyboard audit
-- [ ] Focus audit
+- [x] Keyboard audit
+- [x] Focus audit
 - [ ] Contrast audit
-- [ ] Semantic HTML audit
-- [ ] Reduced motion audit
+- [x] Semantic HTML audit
+- [x] Reduced motion audit
 - [ ] Touch target audit
 
 ## Phase 12 — Performance
 
 - [ ] Image optimization
-- [ ] Bundle analysis
-- [ ] Lazy loading
+- [x] Bundle analysis
+- [x] Lazy loading
 - [ ] 3D performance audit
 - [ ] Animation performance audit
 - [ ] Mobile performance audit
