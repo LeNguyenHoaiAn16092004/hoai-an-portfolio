@@ -4,13 +4,13 @@ import { Layout } from './components/Layout';
 import { CommandPalette } from './components/CommandPalette';
 import { lazyLoad } from './hooks';
 
-const HomePage = lazyLoad(() => import('./pages/HomePage'));
-const ProjectsPage = lazyLoad(() => import('./pages/ProjectsPage'));
-const AboutPage = lazyLoad(() => import('./pages/AboutPage'));
-const LabPage = lazyLoad(() => import('./pages/LabPage'));
-const NotesPage = lazyLoad(() => import('./pages/NotesPage'));
-const ContactPage = lazyLoad(() => import('./pages/ContactPage'));
-const NotFoundPage = lazyLoad(() => import('./pages/NotFoundPage'));
+const HomePage = lazyLoad(() => import('./pages/HomePage'), 'HomePage');
+const ProjectsPage = lazyLoad(() => import('./pages/ProjectsPage'), 'ProjectsPage');
+const AboutPage = lazyLoad(() => import('./pages/AboutPage'), 'AboutPage');
+const LabPage = lazyLoad(() => import('./pages/LabPage'), 'LabPage');
+const NotesPage = lazyLoad(() => import('./pages/NotesPage'), 'NotesPage');
+const ContactPage = lazyLoad(() => import('./pages/ContactPage'), 'ContactPage');
+const NotFoundPage = lazyLoad(() => import('./pages/NotFoundPage'), 'NotFoundPage');
 
 export function App() {
    return (

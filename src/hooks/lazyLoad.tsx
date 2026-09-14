@@ -1,9 +1,18 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, type ComponentType } from 'react';
 
-export function lazyLoad(
-   fn: () => Promise<any>
-) {
-   const LazyComponent = lazy(fn);
+// Documented `any` usage: this is a generic passthrough wrapper that forwards
+// props to the wrapped component untouched, so the prop type stays open.
+type AnyComponent = ComponentType<any>;
+
+/**
+ * lazyLoad — code-split wrapper for modules that use named exports.
+ *
+ * React.lazy only understands `{ default: Component }`, so the requested
+ * named export is mapped to `default` here. Without this mapping, lazily
+ * loaded routes resolve to `undefined` and crash at render time.
+ */
+export function lazyLoad<T extends object>(fn: () => Promise<T>, name: keyof T & string) {
+   const LazyComponent = lazy(() => fn().then((mod) => ({ default: mod[name] as AnyComponent })));
    return function LoadedComponent(props: any) {
       return (
          <Suspense
