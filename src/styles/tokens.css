@@ -81,14 +81,17 @@
 /* ─── Border ─────────────────────────────────────────────────────────────── */
 
 :root {
-  --border-width-thin: 1px;
-  --border-width-base: 1px;
-  --border-width-thick: 2px;
+   --border-width-thin: 1px;
+   --border-width-base: 1px;
+   --border-width-thick: 2px;
+   --border-width-wide: 4px;
 
-  --radius-none: 0;
-  --radius-sm:   2px;
-  --radius-base: 4px;
-  --radius-md:   6px;
+   --radius-none: 0;
+   --radius-sm:   2px;
+   --radius-base: 4px;
+   --radius-md:   6px;
+   --radius-lg:   12px;
+   --radius-full: 9999px;
 }
 
 /* ─── Z-index scale ──────────────────────────────────────────────────────── */

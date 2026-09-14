@@ -1,20 +1,27 @@
-/**
- * NotesPage — /notes route stub
- * Will be implemented in Phase 7.
- */
+import { notes } from '../data/notes';
 
 export function NotesPage() {
-  return (
-    <main>
-      <section className="container" style={{ paddingBlock: 'var(--section-gap)' }}>
-        <p className="font-technical" style={{ color: 'var(--color-text-tertiary)', fontSize: 'var(--text-xs)', letterSpacing: 'var(--tracking-wider)', textTransform: 'uppercase' }}>
-          Phase 7
-        </p>
-        <h1 style={{ fontSize: 'var(--text-3xl)', marginTop: 'var(--space-4)' }}>Notes</h1>
-        <p style={{ marginTop: 'var(--space-6)', color: 'var(--color-text-tertiary)', fontSize: 'var(--text-sm)' }}>
-          Technical notes archive will be implemented in Phase 7.
-        </p>
-      </section>
-    </main>
-  );
+   return (
+      <div>
+         <section style={{ paddingBlock: 'var(--section-gap)', paddingInline: 'var(--page-gutter)' }}>
+            <p className="section-number">07</p>
+            <h1 className="section-title" style={{ marginBottom: 'var(--space-8)' }}>Notes</h1>
+            <div className="flex flex-col gap-4">
+               {notes.map((note) => (
+                  <div
+                     key={note.slug}
+                     style={{
+                        padding: 'var(--space-6) 0',
+                        borderBottom: 'var(--border-width-thin) solid var(--color-border-subtle)',
+                     }}
+                  >
+                     <span className="badge" style={{ marginBottom: 'var(--space-2)' }}>{note.category}</span>
+                     <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 'var(--weight-bold)' }}>{note.title}</h2>
+                     <p className="text-tertiary" style={{ fontSize: 'var(--text-sm)' }}>{note.date}</p>
+                  </div>
+               ))}
+            </div>
+         </section>
+      </div>
+   );
 }

@@ -9,6 +9,7 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from './theme';
+import { Layout } from './components/Layout';
 
 // Pages — direct imports for Phase 0 (code splitting deferred)
 import { HomePage } from './pages/HomePage';
@@ -20,21 +21,21 @@ import { ContactPage } from './pages/ContactPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 export function App() {
-  return (
-    <ThemeProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/projects/:slug" element={<ProjectsPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/lab" element={<LabPage />} />
-          <Route path="/notes" element={<NotesPage />} />
-          <Route path="/notes/:slug" element={<NotesPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
-  );
+   return (
+      <ThemeProvider>
+         <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Layout><HomePage /></Layout>} />
+              <Route path="/projects" element={<Layout><ProjectsPage /></Layout>} />
+              <Route path="/projects/:slug" element={<Layout><ProjectsPage /></Layout>} />
+              <Route path="/about" element={<Layout><AboutPage /></Layout>} />
+              <Route path="/lab" element={<Layout><LabPage /></Layout>} />
+              <Route path="/notes" element={<Layout><NotesPage /></Layout>} />
+              <Route path="/notes/:slug" element={<Layout><NotesPage /></Layout>} />
+              <Route path="/contact" element={<Layout><ContactPage /></Layout>} />
+              <Route path="*" element={<Layout><NotFoundPage /></Layout>} />
+            </Routes>
+         </BrowserRouter>
+      </ThemeProvider>
+   );
 }
