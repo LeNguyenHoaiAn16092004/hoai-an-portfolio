@@ -97,6 +97,11 @@ export interface Education {
   period: string;
 }
 
+export interface Certification {
+  name: string;
+  detail?: string;
+}
+
 export interface Profile {
   name: string;
   role: string;
@@ -104,6 +109,9 @@ export interface Profile {
   shortIntroduction: string;
   longIntroduction: string;
   education: Education[];
+  /** GPA is optional — omit when not verified rather than inventing one. */
+  gpa?: string;
+  certifications: Certification[];
   skills: {
     languages: string[];
     backend: string[];

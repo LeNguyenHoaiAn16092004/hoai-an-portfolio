@@ -60,7 +60,7 @@ export function AboutPage() {
           </div>
         </Reveal>
 
-        {profile.education.length > 0 && (
+        {profile.education.some((edu) => edu.institution || edu.degree || edu.period) && (
           <div style={{ marginBottom: 'var(--space-16)' }}>
             <h2
               style={{
@@ -73,17 +73,42 @@ export function AboutPage() {
             </h2>
             {profile.education.map((edu, i) => (
               <div key={i} style={{ marginBottom: 'var(--space-4)' }}>
-                <p style={{ fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-bold)' }}>
-                  {edu.institution}
-                </p>
-                <p className="text-tertiary" style={{ fontSize: 'var(--text-sm)' }}>
-                  {edu.degree}
-                </p>
-                <p className="text-tertiary" style={{ fontSize: 'var(--text-sm)' }}>
-                  {edu.period}
-                </p>
+                {edu.institution && (
+                  <p style={{ fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-bold)' }}>
+                    {edu.institution}
+                  </p>
+                )}
+                {edu.degree && (
+                  <p className="text-tertiary" style={{ fontSize: 'var(--text-sm)' }}>
+                    {edu.degree}
+                    {edu.period ? ` — ${edu.period}` : ''}
+                    {profile.gpa ? ` · GPA ${profile.gpa}` : ''}
+                  </p>
+                )}
               </div>
             ))}
+          </div>
+        )}
+
+        {profile.certifications.length > 0 && (
+          <div style={{ marginBottom: 'var(--space-16)' }}>
+            <h2
+              style={{
+                fontSize: 'var(--text-2xl)',
+                fontWeight: 'var(--weight-semibold)',
+                marginBottom: 'var(--space-4)',
+              }}
+            >
+              Certifications
+            </h2>
+            <ul className="list">
+              {profile.certifications.map((cert) => (
+                <li key={cert.name} className="list-item">
+                  <span style={{ fontWeight: 'var(--weight-semibold)' }}>{cert.name}</span>
+                  {cert.detail && <span className="text-tertiary"> — {cert.detail}</span>}
+                </li>
+              ))}
+            </ul>
           </div>
         )}
 

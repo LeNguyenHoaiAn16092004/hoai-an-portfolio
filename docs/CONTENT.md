@@ -10,19 +10,22 @@ Replace placeholders with verified information before final deployment.
 ## Profile
 
 Name:
+Lê Nguyễn Hoài An
+
+Display name:
 Hoài An
 
 Primary role:
 Backend / Software Developer
 
 Location:
-Vietnam
+Ho Chi Minh City, Vietnam
 
 Short introduction:
-[WRITE VERIFIED PERSONAL INTRODUCTION]
+Backend-focused developer building with C# and .NET.
 
 Long introduction:
-[WRITE VERIFIED LONGER BIO]
+I work with C# and the .NET stack — ASP.NET Core, Entity Framework, SQL Server — and care about how data moves through a system. I build desktop and mobile software in small teams, and I study backend engineering, system design, and databases.
 
 ## Education
 
@@ -30,10 +33,19 @@ Institution:
 [VERIFY]
 
 Degree/Major:
-[VERIFY]
+IT
 
 Period:
-[VERIFY]
+2026 (graduation)
+
+GPA:
+3.47
+
+## Certifications
+
+- TOEIC Listening & Reading: 830
+- TOEIC Speaking: 120
+- TOEIC Writing: 150
 
 ## Skills
 
@@ -88,46 +100,47 @@ CV:
 
 ## Projects
 
-### Project 01
-
-Name:
-[VERIFY]
+### Project 01 — Café Management System
 
 Slug:
-[VERIFY]
-
-Year:
-[VERIFY]
+cafe-management-system
 
 Category:
-[VERIFY]
+fullstack
 
 Role:
-[VERIFY]
+Developer — team of 4
 
 Summary:
-[WRITE]
+Desktop system for café table and order management, billing, and reports.
 
 Problem:
-[WRITE]
+Cafés tracking tables, orders, and bills on paper or spreadsheets lose time and make mistakes during busy hours.
 
 Solution:
-[WRITE]
+A WinForms desktop application backed by SQL Server: table and order tracking, menu management, billing, reports, and role-based login for staff.
 
 Architecture:
-[WRITE]
+A desktop client over a SQL Server database, with data access through SQL queries and stored procedures.
 
 Technology:
-[WRITE]
+- C#
+- WinForms
+- SQL Server
 
-Challenges:
-[WRITE]
-
-Decisions/trade-offs:
-[WRITE]
+Work areas:
+- Table/order management
+- Menu management
+- Billing
+- Reports
+- Role-based login
+- SQL queries
+- Stored procedures
+- UI
+- Error handling
 
 Results:
-[USE VERIFIED METRICS ONLY]
+[USE VERIFIED METRICS ONLY — none provided]
 
 GitHub:
 [VERIFY]
@@ -135,9 +148,51 @@ GitHub:
 Demo:
 [VERIFY]
 
-### Project 02
+### Project 02 — Group Expense Management App
 
-Repeat the same structure.
+Slug:
+group-expense-app
+
+Category:
+fullstack
+
+Role:
+Developer — team of 4
+
+Summary:
+Mobile app for splitting group expenses with offline storage and sync.
+
+Problem:
+Splitting shared costs across a group — trips, meals, shared housing — gets messy without a shared record.
+
+Solution:
+A Flutter app with group management and expense splitting, Firebase Authentication for sign-in, Firestore for shared state and synchronization, and SQLite for offline storage.
+
+Architecture:
+A Flutter client using SQLite as the on-device store, Firestore as the shared cloud store with synchronization, and Firebase Authentication for sign-in.
+
+Technology:
+- Flutter / Dart
+- Firebase Authentication
+- Firestore
+- SQLite
+
+Work areas:
+- Expense splitting
+- Group management
+- Offline storage
+- Synchronization
+- Reports
+- Flutter UI
+
+Results:
+[USE VERIFIED METRICS ONLY — none provided]
+
+GitHub:
+[VERIFY]
+
+Demo:
+[VERIFY]
 
 ## Lab
 

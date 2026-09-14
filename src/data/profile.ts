@@ -11,7 +11,7 @@
 import type { Profile } from './types';
 
 export const profile: Profile = {
-  name: 'Hoài An',
+  name: 'Lê Nguyễn Hoài An',
   role: 'Backend / Software Developer',
   location: 'Ho Chi Minh City, Vietnam',
 
@@ -20,8 +20,22 @@ export const profile: Profile = {
   longIntroduction:
     'I work with C# and the .NET stack — ASP.NET Core, Entity Framework, SQL Server — and care about how data moves through a system. I build desktop and mobile software in small teams, and I study backend engineering, system design, and databases.',
 
-  // Education is unverified — omitted until confirmed.
-  education: [],
+  // Education institution is unverified — renderers must skip empty fields.
+  education: [
+    {
+      institution: '',
+      degree: 'IT',
+      period: '2026',
+    },
+  ],
+
+  gpa: '3.47',
+
+  certifications: [
+    { name: 'TOEIC Listening & Reading', detail: '830' },
+    { name: 'TOEIC Speaking', detail: '120' },
+    { name: 'TOEIC Writing', detail: '150' },
+  ],
 
   skills: {
     languages: ['C', 'C++', 'C#', 'JavaScript', 'TypeScript'],
