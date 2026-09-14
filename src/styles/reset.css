@@ -1,0 +1,111 @@
+/*
+ * reset.css — Modern minimal reset
+ *
+ * Goals:
+ * - Predictable box model
+ * - Remove browser default margins/padding
+ * - Sane media defaults
+ * - Inherit fonts everywhere
+ * - Accessible focus handling baseline
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Prevent horizontal overflow at the root level */
+  overflow-x: hidden;
+  /* Smooth scroll (only when motion is not reduced) */
+  scroll-behavior: smooth;
+  /* Better text rendering */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  line-height: 1.5;
+  /* Subpixel antialiasing on supported platforms */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sane media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Remove list styles when list-style is explicitly none */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Anchor defaults */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Remove default button styles */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Preserve whitespace formatting in code */
+pre,
+code {
+  font-family: inherit;
+}
+
+/* Avoid text overflow in headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Accessible hidden class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reduced motion — disable smooth scroll */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

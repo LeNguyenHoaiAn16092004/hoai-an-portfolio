@@ -1,0 +1,194 @@
+/*
+ * tokens.css — Design token foundation
+ *
+ * All tokens are defined here as CSS custom properties.
+ * Components consume these tokens; they do not hard-code values.
+ *
+ * Token namespacing:
+ *   --color-*    Color system
+ *   --font-*     Typography
+ *   --size-*     Spacing / sizing
+ *   --radius-*   Border radius
+ *   --border-*   Border widths
+ *   --duration-* Motion durations
+ *   --ease-*     Motion easings
+ *   --z-*        Z-index scale
+ */
+
+/* ─── Typography ─────────────────────────────────────────────────────────── */
+
+:root {
+  /* Font families — 3 roles */
+  --font-display: 'Syne', 'Arial Black', sans-serif;
+  --font-editorial: 'Lora', 'Georgia', serif;
+  --font-technical: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Fluid type scale — uses clamp() for responsive sizing */
+  --text-xs:   clamp(0.65rem, 0.6rem + 0.25vw,  0.75rem);  /* 10–12px */
+  --text-sm:   clamp(0.8rem,  0.75rem + 0.25vw,  0.875rem); /* 13–14px */
+  --text-base: clamp(0.9rem,  0.85rem + 0.25vw,  1rem);     /* 14–16px */
+  --text-md:   clamp(1rem,    0.95rem + 0.3vw,   1.125rem); /* 16–18px */
+  --text-lg:   clamp(1.125rem,1rem + 0.5vw,      1.5rem);   /* 18–24px */
+  --text-xl:   clamp(1.25rem, 1rem + 1vw,        2rem);     /* 20–32px */
+  --text-2xl:  clamp(1.75rem, 1.25rem + 2vw,     3rem);     /* 28–48px */
+  --text-3xl:  clamp(2.5rem,  1.5rem + 4vw,      5rem);     /* 40–80px */
+  --text-4xl:  clamp(3.5rem,  2rem + 6vw,        8rem);     /* 56–128px */
+
+  /* Line heights */
+  --leading-tight:  1.1;
+  --leading-snug:   1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.7;
+
+  /* Letter spacing */
+  --tracking-tight:  -0.02em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.05em;
+  --tracking-wider:   0.1em;
+  --tracking-widest:  0.2em;
+
+  /* Font weights */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-black:    900;
+}
+
+/* ─── Spacing ────────────────────────────────────────────────────────────── */
+
+:root {
+  --space-1:  0.25rem;   /*  4px */
+  --space-2:  0.5rem;    /*  8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-8:  2rem;      /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+  --space-32: 8rem;      /* 128px */
+
+  /* Fluid layout spacing */
+  --section-gap: clamp(4rem, 2rem + 8vw, 10rem);
+  --content-gap:  clamp(2rem, 1rem + 4vw, 5rem);
+  --page-gutter:  clamp(1.25rem, 4vw, 6rem);
+}
+
+/* ─── Border ─────────────────────────────────────────────────────────────── */
+
+:root {
+  --border-width-thin: 1px;
+  --border-width-base: 1px;
+  --border-width-thick: 2px;
+
+  --radius-none: 0;
+  --radius-sm:   2px;
+  --radius-base: 4px;
+  --radius-md:   6px;
+}
+
+/* ─── Z-index scale ──────────────────────────────────────────────────────── */
+
+:root {
+  --z-below:  -1;
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 100;
+  --z-nav:     200;
+  --z-modal:   300;
+  --z-cursor:  400;
+}
+
+/* ─── Motion ─────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Durations — per MOTION.md hierarchy */
+  --duration-instant:   0ms;
+  --duration-micro:     150ms;  /* Level 1 lower */
+  --duration-fast:      200ms;  /* Level 1 */
+  --duration-base:      300ms;  /* Level 2 lower */
+  --duration-moderate:  450ms;  /* Level 2 */
+  --duration-slow:      700ms;  /* Level 3 lower */
+  --duration-deliberate:1000ms; /* Level 3 */
+
+  /* Easings — natural feel per MOTION.md */
+  --ease-out-soft:  cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-sharp: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:    cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-linear:    linear;
+}
+
+/* ─── Light theme (default) ──────────────────────────────────────────────── */
+
+:root,
+[data-theme='light'] {
+  /* Backgrounds */
+  --color-bg:          #f5f2ee;   /* warm off-white */
+  --color-bg-subtle:   #ece8e2;   /* slightly darker for inset areas */
+  --color-bg-surface:  #faf8f5;   /* card/surface */
+
+  /* Text */
+  --color-text-primary:   #1a1714;  /* near-black, warm */
+  --color-text-secondary: #6b6560;  /* warm gray */
+  --color-text-tertiary:  #9c9690;  /* faint metadata */
+  --color-text-inverted:  #f5f2ee;
+
+  /* Accent — muted terracotta/red per DESIGN.md */
+  --color-accent:        #b84c3c;
+  --color-accent-muted:  #d47060;
+  --color-accent-subtle: #f0dcd8;
+
+  /* Borders */
+  --color-border:        #2a2520;  /* dark, editorial */
+  --color-border-subtle: #c8c2ba;
+
+  /* Focus ring */
+  --color-focus:         #b84c3c;
+
+  /* Functional */
+  --color-error:   #c0392b;
+  --color-success: #2e7d52;
+}
+
+/* ─── Dark theme ─────────────────────────────────────────────────────────── */
+
+[data-theme='dark'] {
+  /* Backgrounds */
+  --color-bg:          #1c1a17;   /* warm charcoal, not pure black */
+  --color-bg-subtle:   #252219;
+  --color-bg-surface:  #221f1b;
+
+  /* Text */
+  --color-text-primary:   #e8e3da;  /* warm off-white */
+  --color-text-secondary: #9a9089;  /* muted warm gray */
+  --color-text-tertiary:  #6a6058;
+  --color-text-inverted:  #1c1a17;
+
+  /* Accent */
+  --color-accent:        #d46050;
+  --color-accent-muted:  #b84c3c;
+  --color-accent-subtle: #3d2520;
+
+  /* Borders */
+  --color-border:        #d4cfc6;  /* warm light neutral */
+  --color-border-subtle: #3a342c;
+
+  /* Focus ring */
+  --color-focus:         #d46050;
+
+  /* Functional */
+  --color-error:   #e05c4b;
+  --color-success: #4caf80;
+}
+
+/* ─── Semantic layout max-widths ─────────────────────────────────────────── */
+
+:root {
+  --max-width-text:    65ch;    /* readable prose */
+  --max-width-content: 75rem;  /* 1200px main content */
+  --max-width-wide:    95rem;  /* 1520px wide editorial */
+}

@@ -1,0 +1,160 @@
+/*
+ * global.css — Base styles built on top of reset + tokens
+ *
+ * Applies:
+ * - Token consumption on base HTML elements
+ * - Typography hierarchy defaults
+ * - Focus styles
+ * - Reduced-motion global rules
+ * - Layout utility primitives
+ */
+
+@import './reset.css';
+@import './tokens.css';
+
+/* ─── Base HTML ──────────────────────────────────────────────────────────── */
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  transition:
+    background-color var(--duration-moderate) var(--ease-out-soft),
+    color var(--duration-moderate) var(--ease-out-soft);
+}
+
+/* ─── Typography defaults ────────────────────────────────────────────────── */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+}
+
+p {
+  max-width: var(--max-width-text);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* Editorial / serif text role */
+.font-editorial {
+  font-family: var(--font-editorial);
+  font-weight: var(--weight-regular);
+}
+
+/* Technical / mono text role */
+.font-technical,
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-technical);
+  font-size: 0.9em;
+}
+
+/* ─── Links ──────────────────────────────────────────────────────────────── */
+
+a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* ─── Focus styles — visible and accessible ──────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Remove focus ring for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ─── Selection ──────────────────────────────────────────────────────────── */
+
+::selection {
+  background-color: var(--color-accent-subtle);
+  color: var(--color-text-primary);
+}
+
+/* ─── Horizontal rule ────────────────────────────────────────────────────── */
+
+hr {
+  border: none;
+  border-top: var(--border-width-thin) solid var(--color-border-subtle);
+  margin: var(--space-8) 0;
+}
+
+/* ─── Scrollbar (optional styling) ──────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-subtle);
+  border-radius: var(--radius-base);
+}
+
+/* ─── Layout utilities ───────────────────────────────────────────────────── */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+.container--wide {
+  max-width: var(--max-width-wide);
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    transition: none;
+  }
+}
+
+/* ─── App root ───────────────────────────────────────────────────────────── */
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
