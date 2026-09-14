@@ -30,3 +30,7 @@ or the established design direction.
 A feature is not complete merely because code compiles. It must be verified
 for build/lint, browser behavior, responsive behavior, theme behavior,
 accessibility, performance, and regression risk where applicable.
+
+
+## Git Policy
+Git rules are defined in `.agents/rules/06-git.md`. The commit/push workflow is in `.agents/workflows/commit-and-push.md`.

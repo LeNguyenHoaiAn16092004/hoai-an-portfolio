@@ -2,14 +2,14 @@
 
 ## Phase 0 — Foundation
 
-- [ ] Create repository
-- [ ] Initialize React + TypeScript + Vite
+- [x] Create repository
+- [x] Initialize React + TypeScript + Vite
 - [x] Configure Git
-- [ ] Configure linting
-- [ ] Configure formatting
-- [ ] Establish source structure
-- [ ] Establish base tokens
-- [ ] Verify clean build
+- [x] Configure linting
+- [x] Configure formatting
+- [x] Establish source structure
+- [x] Establish base tokens
+- [x] Verify clean build
 
 ## Phase 1 — Design System
 
