@@ -13,15 +13,19 @@
 
 ## Phase 1 — Design System
 
-- [ ] Typography
-- [ ] Color tokens
-- [ ] Light theme
-- [ ] Dark theme
-- [ ] Spacing
-- [ ] Borders
-- [ ] Buttons/links
-- [ ] Focus states
-- [ ] Base responsive rules
+- [x] Typography
+- [x] Color tokens
+- [x] Light theme
+- [x] Dark theme
+- [x] Spacing
+- [x] Borders
+- [x] Buttons/links
+- [x] Focus states
+- [x] Base responsive rules
+- [x] Font loading (Syne, Lora, JetBrains Mono)
+- [x] UI primitives (buttons, badges, lists, code blocks, forms)
+- [x] Navigation component
+- [x] Layout component (Navigation + Footer)
 
 ## Phase 2 — Responsive Architecture
 
